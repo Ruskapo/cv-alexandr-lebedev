@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ===== Theme */
+:root {
+  --bg-gradient: linear-gradient(135deg, #1e293b, #0f172a);
+  --card:rgba(30, 41, 59, 0.85);
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --border: rgba(148, 163, 184, 0.3);
+  --accent: #38bdf8;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Base */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text);
+  font: 400 16px 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+/* ===== Links */
+a { color: var(--accent); text-decoration: none; font-weight: 500; }
+a:hover { text-decoration: underline; }
+
+/* ===== Layout */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+/* ===== Profile */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  display: block;
+  border: 2px solid var(--accent);
+  transition: transform 0.3s ease;
+}
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+.info-text h1 {
+  margin: 0 0 4px 0;
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+.info-text h2 {
+  margin: 0;
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+/* ===== Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+  margin-top: 16px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, box-shadow 0.3s ease, bacldrop-filter 0.3s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+}
+
+.card h3 {
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.card p {
+  margin: 0;
+  color: var(--text);
+}
+
+/* ===== Lists */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list li {
+  color: var(--muted);
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
+}
+.list li:last-child {
+  border-bottom: none;
+}
+
+/* ===== Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  transition: 
+    transform 0.08s ease, 
+    box-shadow 0.2s ease, 
+    background 0.2s ease;
+}
+
+.btn:hover {
+  text-decoration: none;
+  background-color: #0ea5e9; 
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* ===== Footer */
+.contact {
+  text-align: center;
+}
+.contact .copy {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive */
+@media (max-width: 700px) {
+  .profile {
+    display: block;
+    text-align: center;
+  }
+  .avatar {
+    margin: 0 auto 16px;
+    width: 160px;
+    height: 160px;
+  }
+  .info-text {
+    margin: 0;
+  }
+}
+
+/* ===== Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
